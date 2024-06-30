@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Suez+One&display=swap');
+
+$linear-gradient: #e5094b, #e1372b;
+$main-red-color: #e5094b;
+
+* {
+  outline: none;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between; // розкидати об'єкти по різних сторонах
+}
+
+.header {
+    .header-element {
+        @extend .flex;
+        margin: 10px 0;
+
+        .header-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff;
+            position: relative;
+            text-shadow:
+                1px 1px 0 black;
+
+            &::before {
+                content: 'Superfit';
+                position: absolute;
+                top: 0.1em;
+                left: 0.1em;
+                color: black;
+                z-index: -1;
+            }
+        }
+
+        .header-number {
+            margin: 5px 0;
+        }
+    }
+}
+
+.section-banner {
+    width: 100%; /* можна змінювати відсоток для відповідного розміру контейнера */
+    max-width: 1000%; /* максимальна ширина контейнера */ 
+
+    .img-banner {
+        width: 100%;
+        display: block;
+    }
+}
+
+.section-content {
+    @extend .flex;
+    margin: 30px 0;
+    
+    .img-content {
+        width: 50%;
+        height: 50%;
+    }
+}
